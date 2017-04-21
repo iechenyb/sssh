@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.depend.sssh.entity">
+
+    <class name="AccountInfo" table="account_info">
+        <id name="id">
+            <generator class="assigned"/>
+        </id>
+        <property name="email" length="64" not-null="false" unique="true"/>
+        <property name="password" length="128" not-null="false"/>
+        <property name="nikename" length="20" not-null="false" unique="true"/>
+        <property name="accountNonExpired" not-null="false" />
+        <property name="accountNonLocked" not-null="false" />
+		<property name="credentialsNonExpired" not-null="false" />
+		<property name="enabled" not-null="false" />
+		<property name="createdTime" not-null="false" update="false" />
+		<property name="cellphone" length="15" not-null="false" />
+		<property name="createdIPAddress" length="15" not-null="false" update="false" />
+  
+        <set name="authorityInfos" table="account_authority" lazy="false">
+            <key column="accountId"/>
+            <many-to-many column="authorityId" class="AuthorityInfo"/>
+        </set>
+
+    </class>
+
+</hibernate-mapping>

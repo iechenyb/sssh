@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:security="http://www.springframework.org/schema/security"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/security
+		http://www.springframework.org/schema/security/spring-security.xsd">
+		
+	<security:http pattern="/themes/**" security="none" />
+	<security:http pattern="/index.jsp*" security="none" />
+	<security:http>
+		<!-- 自定义登录页面 -->
+		<security:form-login login-page="/bg/user/login" login-processing-url="/login"
+			always-use-default-target="true" default-target-url="/bg/home/index" />
+		<!-- 无权操作 -->
+		<security:access-denied-handler error-page="/accessDenied.jsp" />
+		<!-- 防止 CSRF 攻击  -->
+		<security:csrf />
+		<!-- 退出 -->
+		<security:logout invalidate-session="true" logout-url="/logout" logout-success-url="/bg/user/login?logout" delete-cookies="JSESSIONID" />
+			
+		<!-- session 管理 -->
+		<security:session-management invalid-session-url="/invalidSession.jsp" session-fixation-protection="none">
+			<security:concurrency-control max-sessions="1" error-if-maximum-exceeded="true" />
+		</security:session-management>
+		
+        <security:custom-filter ref="customSecurityInterceptor" before="FILTER_SECURITY_INTERCEPTOR"/>
+	</security:http>
+	
+	<!-- 自定义登录 -->
+	<security:authentication-manager>
+		<security:authentication-provider user-service-ref="customUserDetailsService" />
+	</security:authentication-manager>
+
+</beans>

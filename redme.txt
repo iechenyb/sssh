@@ -1,0 +1,17 @@
+							spring4 + spring mvc + spring security 4.1.2 + hibernate 5.2.5 + mysql 5.7 权限管理系统
+	1.系统环境
+		windows + linux
+		tomcat 7
+		mysql 5.7
+		eclispe none 2
+		jdk 1.8.77
+		数据连接池：阿里巴巴 数据库连接池
+	2.实体映射关系
+	account ---> Authorities ---> resources （多对多）
+	Authorities 必须也 "ROLE_" 开头
+	3. 用Eclipse 到处工程  可以直接运行
+	 数据 需要自己添加
+	
+	
+	作者：Depend
+	email：blacksalon@163.com

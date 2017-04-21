@@ -1,0 +1,19 @@
+			spring + springmvc + spring security + hibernate 权限管理系统简单Demo(精确到按钮)
+1.本Demo采用 spring 4.3.3 (所有包)
+			spring security 4.1.3(所有包) 
+			hibernate 5.2.5 (required,optional(c3p0),jpa-metamodel-generator)
+			JDK 1.8.0_77
+			tomcat 7
+			eclipse neno2
+			ubuntu 16.04
+			mysql 5.7
+			junit 4
+2.权限关系
+	AccountInfo（用户） 与 AuthorityInfo（权限信息<即：角色信息>） 多对多关系
+	AuthorityInfo 与 ResourcesInfo（资源信息） 多对多关系
+3.本Demo 没有用密码加密
+
+作者信息:
+	昵称：Depend
+	邮箱:blacksalon@163.com
+	QQ:1016626308
