@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>后台登录</title>
-	<!-- Import google fonts - Heading first/ text second -->
+	<%-- <!-- Import google fonts - Heading first/ text second -->
        <link rel='stylesheet' type='text/css' href='http://fonts.useso.com/css?family=Open+Sans:400,700|Droid+Sans:400,700' />
        <!--[if lt IE 9]>
 	<link href="http://fonts.useso.com/css?family=Open+Sans:400" rel="stylesheet" type="text/css" />
@@ -36,7 +36,7 @@
     <!--[if lt IE 9]>
 		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <![endif]--> --%>
 </head>
 <body>
 <div class="container-fluid content">
@@ -63,8 +63,7 @@
 								<div class="form-group">
 									<div class="controls row">
 										<div class="input-group col-sm-12">	
-											<input type="email" class="form-control" name="username" id="username" placeholder="邮箱" required="required"/>
-											<span class="input-group-addon"><i class="fa fa-user"></i></span>
+											<input type="text"  name="username" id="username" />
 										</div>	
 									</div>
 								</div>
@@ -72,20 +71,20 @@
 								<div class="form-group">
 									<div class="controls row">
 										<div class="input-group col-sm-12">	
-											<input type="password" class="form-control" name="password" id="password" placeholder="密码" required="required"/>
+											<input type="password" name="password" id="password" />
 											<span class="input-group-addon"><i class="fa fa-key"></i></span>
 										</div>	
 									</div>
 								</div>
 								
-								<div class="form-group">
+								<!-- <div class="form-group">
 									<div class="controls row">
 										<div class="input-group col-sm-12">	
 											<input type="test" class="form-control" name="captcha" id="captcha" placeholder="验证码"  />
 											<span class="input-group-addon"><i class="fa  fa-qrcode"></i></span>
 										</div>	
 									</div>
-								</div>
+								</div> -->
 								
 								<div class="confirm">
 									<input type="checkbox" name="remember"/>
@@ -114,7 +113,7 @@
 		</div><!--/row-->		
 	
 		
-		<div id="usage-blank">
+		<!-- <div id="usage-blank">
 			<ul>
 				<li>
 					<div class="title">Memory</div>
@@ -155,11 +154,11 @@
 			</ul>	
 		</div>			
 		
-	</div><!--/container-->
+	</div> --><!--/container-->
 
 
 
-	<!-- start: JavaScript-->
+	<%-- <!-- start: JavaScript-->
 	<!--[if !IE]>-->
 		<script src="${pageContext.request.contextPath }/themes/bg/assets/js/jquery-2.1.1.min.js"></script>
 	<!--<![endif]-->
@@ -185,6 +184,6 @@
 	<script src="${pageContext.request.contextPath }/themes/bg/assets/js/core.min.js"></script>
 	<!-- inline scripts related to this page -->
 	<script src="${pageContext.request.contextPath }/themes/bg/assets/js/pages/login.js"></script>
-	<!-- end: JavaScript-->
+	<!-- end: JavaScript--> --%>
 </body>
 </html>

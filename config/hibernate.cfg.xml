@@ -17,8 +17,8 @@
 	<!-- Drop and re-create the database schema on startup -->
 	<property name="hibernate.hbm2ddl.auto">update</property>
 	
-	<mapping resource="com/depend/sssh/entity/AccountInfo.hbm.xml"/>
-	<mapping resource="com/depend/sssh/entity/ResourcesInfo.hbm.xml"/>
-	<mapping resource="com/depend/sssh/entity/AuthorityInfo.hbm.xml"/>
+	<mapping resource="com/cyb/sssh/entity/AccountInfo.hbm.xml"/>
+	<mapping resource="com/cyb/sssh/entity/ResourcesInfo.hbm.xml"/>
+	<mapping resource="com/cyb/sssh/entity/AuthorityInfo.hbm.xml"/>
 </session-factory>
 </hibernate-configuration>

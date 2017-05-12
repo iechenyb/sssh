@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>拒绝访问</title>
 	
-	<!-- Import google fonts - Heading first/ text second -->
+	<%-- <!-- Import google fonts - Heading first/ text second -->
     <link rel='stylesheet' type='text/css' href='http://fonts.useso.com/css?family=Open+Sans:400,700|Droid+Sans:400,700' />
     <!--[if lt IE 9]>
 	<link href="http://fonts.useso.com/css?family=Open+Sans:400" rel="stylesheet" type="text/css" />
@@ -37,7 +37,7 @@
     <!--[if lt IE 9]>
 		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <![endif]--> --%>
 	
 </head>
 <body>
@@ -51,14 +51,9 @@
 					<div class="text-center">
 						<h3>无权操作</h3>
 						<h4>对不起，您无权执行此操作 ...</h4>
-						 
 						<a href="javascript: history.go(-1)">
 							<button class="btn btn-default"><span class="fa fa-chevron-left"> 回 退</span></button>
-						</a>
-						
-						<a href="#">
-							<button class="btn btn-default"><span class="fa fa-envelope"> 联系管理员</span></button>	
-						</a>
+						</a>					
 					</div>
 					
 					</div><!--/col-->
@@ -70,7 +65,7 @@
 		</div><!--/row-->
 
 		
-		<div id="usage-blank">
+		<%-- <div id="usage-blank">
 			<ul>
 				<li>
 					<div class="title">Memory</div>
@@ -150,6 +145,6 @@
 	<script src="${pageContext.request.contextPath }/themes/bg/assets/js/SmoothScroll.js"></script>
 	<script src="${pageContext.request.contextPath }/themes/bg/assets/js/jquery.mmenu.min.js"></script>
 	<script src="${pageContext.request.contextPath }/themes/bg/assets/js/core.min.js"></script>
-	<!-- end: JavaScript-->
+	<!-- end: JavaScript--> --%>
 </body>
 </html>

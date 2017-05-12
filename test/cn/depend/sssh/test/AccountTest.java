@@ -9,13 +9,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.depend.sssh.background.sevices.AccountManageService;
-import com.depend.sssh.background.sevices.AuthorityManageService;
-import com.depend.sssh.background.sevices.ResourcesManageService;
-import com.depend.sssh.common.utils.UUIDUtils;
-import com.depend.sssh.entity.AccountInfo;
-import com.depend.sssh.entity.AuthorityInfo;
-import com.depend.sssh.entity.ResourcesInfo;
+import com.cyb.sssh.background.sevices.AccountManageService;
+import com.cyb.sssh.background.sevices.AuthorityManageService;
+import com.cyb.sssh.background.sevices.ResourcesManageService;
+import com.cyb.sssh.common.utils.UUIDUtils;
+import com.cyb.sssh.entity.AccountInfo;
+import com.cyb.sssh.entity.AuthorityInfo;
+import com.cyb.sssh.entity.ResourcesInfo;
 
 /**
  * 

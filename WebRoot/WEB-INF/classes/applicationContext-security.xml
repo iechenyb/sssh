@@ -9,17 +9,21 @@
 		
 	<security:http pattern="/themes/**" security="none" />
 	<security:http pattern="/index.jsp*" security="none" />
-	<security:http>
+	<security:global-method-security pre-post-annotations="enabled"/>  
+	<security:http use-expressions="true">
+	    <security:intercept-url pattern="/admin/*" access="hasRole('ADMIN')"/>
+		<!-- <intercept-url pattern="/*" access="hasRole('ROLE_USER')" /> -->
+		<!--访问/**资源的用户必须具有ROLE_USER的权限 -->
+		<security:intercept-url pattern="/customer/*" access="hasRole('USER')"/>
 		<!-- 自定义登录页面 -->
-		<security:form-login login-page="/bg/user/login" login-processing-url="/login"
-			always-use-default-target="true" default-target-url="/bg/home/index" />
+		<security:form-login login-page="/login.jsp" login-processing-url="/login"
+			always-use-default-target="true" default-target-url="/index.jsp" />
 		<!-- 无权操作 -->
 		<security:access-denied-handler error-page="/accessDenied.jsp" />
 		<!-- 防止 CSRF 攻击  -->
 		<security:csrf />
 		<!-- 退出 -->
-		<security:logout invalidate-session="true" logout-url="/logout" logout-success-url="/bg/user/login?logout" delete-cookies="JSESSIONID" />
-			
+		<security:logout invalidate-session="true" logout-url="/logout" logout-success-url="/login1.jsp" delete-cookies="JSESSIONID" />			
 		<!-- session 管理 -->
 		<security:session-management invalid-session-url="/invalidSession.jsp" session-fixation-protection="none">
 			<security:concurrency-control max-sessions="1" error-if-maximum-exceeded="true" />
