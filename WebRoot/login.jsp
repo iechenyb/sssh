@@ -26,7 +26,7 @@
 				
 						<br>
 					
-						<form class="form-horizontal login" action="${pageContext.request.contextPath }/login" method="post">
+						<form class="form-horizontal login" action="${pageContext.request.contextPath }/customer/login" method="post">
 							<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 						
 							<fieldset class="col-sm-12">

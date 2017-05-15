@@ -9,14 +9,15 @@
 		
 	<security:http pattern="/themes/**" security="none" />
 	<security:http pattern="/index.jsp*" security="none" />
+	<security:http pattern="/customer/login" security="none" />
 	<security:global-method-security pre-post-annotations="enabled"/>  
 	<security:http use-expressions="true">
-	    <security:intercept-url pattern="/admin/*" access="hasRole('ADMIN')"/>
-		<!-- <intercept-url pattern="/*" access="hasRole('ROLE_USER')" /> -->
+	    <security:intercept-url pattern="/admin/*" access="hasRole('ROLE_ADMIN')"/>
+		<!-- <intercept-url pattern="/*" access="hasRole('ROLE_USER')" /> 写全称和写后缀都能用！ -->
 		<!--访问/**资源的用户必须具有ROLE_USER的权限 -->
-		<security:intercept-url pattern="/customer/*" access="hasRole('USER')"/>
-		<!-- 自定义登录页面 -->
-		<security:form-login login-page="/login.jsp" login-processing-url="/login"
+		<security:intercept-url pattern="/customer/*" access="hasRole('ROLE_USER')"/>
+		<!-- 自定义登录页面 默认login-->
+		<security:form-login login-page="/login.jsp" login-processing-url="/user/login"
 			always-use-default-target="true" default-target-url="/index.jsp" />
 		<!-- 无权操作 -->
 		<security:access-denied-handler error-page="/accessDenied.jsp" />
@@ -33,7 +34,7 @@
 	</security:http>
 	
 	<!-- 自定义登录 -->
-	<security:authentication-manager>
+	<security:authentication-manager alias="myAuthenticationManager">
 		<security:authentication-provider user-service-ref="customUserDetailsService" />
 	</security:authentication-manager>
 
